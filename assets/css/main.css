@@ -13,19 +13,23 @@
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #0a0f14; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #0f2943; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #e87532; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --accent-color: #058ED9; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+  --contrast2-color: #483D3F;
+  --contrast3-color: #F4EBD9;
+  --contrast4-color: #A39A92;
+  --contrast5-color: #77685D;
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
   --nav-color: #0a0f14;  /* The default color of the main navmenu links */
-  --nav-hover-color: #e87532; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-hover-color: #058ED9; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
   --nav-dropdown-color: #0a0f14; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #e87532; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-dropdown-hover-color: #058ED9; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -78,58 +82,6 @@ h6 {
   font-family: var(--heading-font);
 }
 
-/* PHP Email Form Messages
-------------------------------*/
-.php-email-form .error-message {
-  display: none;
-  background: #df1529;
-  color: #ffffff;
-  text-align: left;
-  padding: 15px;
-  margin-bottom: 24px;
-  font-weight: 600;
-}
-
-.php-email-form .sent-message {
-  display: none;
-  color: #ffffff;
-  background: #059652;
-  text-align: center;
-  padding: 15px;
-  margin-bottom: 24px;
-  font-weight: 600;
-}
-
-.php-email-form .loading {
-  display: none;
-  background: var(--surface-color);
-  text-align: center;
-  padding: 15px;
-  margin-bottom: 24px;
-}
-
-.php-email-form .loading:before {
-  content: "";
-  display: inline-block;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  margin: 0 10px -6px 0;
-  border: 3px solid var(--accent-color);
-  border-top-color: var(--surface-color);
-  animation: php-email-form-loading 1s linear infinite;
-}
-
-@keyframes php-email-form-loading {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 /*--------------------------------------------------------------
 # Global Header
 --------------------------------------------------------------*/
@@ -163,6 +115,10 @@ h6 {
   padding-left: 5px;
   font-weight: 500;
   color: var(--heading-color);
+}
+
+.header .sitename .e-logo {
+  color: var(--contrast5-color);
 }
 
 .header .header-social-links {
@@ -650,25 +606,20 @@ section,
   font-size: 42px;
   font-weight: 700;
   margin-bottom: 10px;
-  background: linear-gradient(120deg, var(--heading-color), var(--accent-color));
+  background: linear-gradient(120deg, var(--contrast-color), var(--contrast2-color));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   position: relative;
 }
 
-.section-title .title-shape {
-  width: 200px;
-  height: 20px;
+.section-title .title-line {
+  width: 50%;
+  height: 2px;
   margin: 0 auto;
-  color: var(--accent-color);
-  opacity: 0.5;
+  color: var(--contrast4-color);
 }
 
-.section-title .title-shape svg {
-  width: 100%;
-  height: 100%;
-}
 
 .section-title p {
   margin: 15px auto 0;
@@ -818,7 +769,7 @@ section,
   width: 200px;
   height: 200px;
   background-color: color-mix(in srgb, var(--heading-color), transparent 90%);
-  bottom: -20px;
+  bottom: 50px;
   left: -20px;
   animation: morphShape 20s linear infinite reverse;
 }
@@ -867,6 +818,7 @@ section,
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
+
 .about .about-image {
   position: relative;
 }
@@ -937,7 +889,7 @@ section,
 }
 
 .about .signature .signature-image {
-  max-width: 150px;
+  max-width: 350px;
 }
 
 .about .signature .signature-info h4 {
@@ -959,6 +911,7 @@ section,
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  min-height: 220px;
 }
 
 .skills .skill-box h3 {
@@ -1027,7 +980,7 @@ section,
   top: 0;
   height: 100%;
   width: 2px;
-  background-color: color-mix(in srgb, var(--accent-color), transparent 85%);
+  background-color: color-mix(in srgb, var(--contrast5-color), transparent 85%);
 }
 
 .resume .resume-wrapper .timeline .timeline-item {
@@ -1053,8 +1006,14 @@ section,
   margin-bottom: 0.25rem;
 }
 
+.resume .resume-wrapper .timeline .timeline-item .timeline-left .resume-company-logo {
+  max-width: 24px;
+  max-height: 24px;
+  margin-right: 0.25rem;
+}
+
 .resume .resume-wrapper .timeline .timeline-item .timeline-left .period {
-  color: var(--accent-color);
+  color: var(--contrast5-color);
   font-size: 0.9rem;
 }
 
@@ -1064,7 +1023,7 @@ section,
   transform: translateX(-50%);
   width: 1rem;
   height: 1rem;
-  background-color: var(--accent-color);
+  background-color: var(--contrast5-color);
   border-radius: 50%;
 }
 
@@ -1247,7 +1206,7 @@ section,
 
 .portfolio .portfolio-card .portfolio-content .category {
   font-size: 14px;
-  color: var(--accent-color);
+  color: var(--contrast2-color);
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 500;
@@ -1669,7 +1628,7 @@ section,
   display: block;
   width: 50px;
   height: 3px;
-  background: var(--accent-color);
+  background: var(--contrast3-color);
   left: 0;
   bottom: 0;
 }
