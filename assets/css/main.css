@@ -82,6 +82,38 @@ h6 {
   font-family: var(--heading-font);
 }
 
+.btn {
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.btn.btn.btn-primary {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+.btn.btn-primary:hover {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 15%);
+  border-color: color-mix(in srgb, var(--accent-color), transparent 15%);
+  transform: translateY(-2px);
+}
+
+.btn.btn-outline {
+  border: 2px solid color-mix(in srgb, var(--accent-color), transparent 70%);
+  color: var(--accent-color);
+  background: transparent;
+}
+
+.btn.btn-outline:hover {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  transform: translateY(-2px);
+}
+
 /*--------------------------------------------------------------
 # Global Header
 --------------------------------------------------------------*/
@@ -677,38 +709,6 @@ section,
   .hero .cta-buttons {
     flex-direction: column;
   }
-}
-
-.hero .cta-buttons .btn {
-  padding: 0.8rem 2rem;
-  font-size: 1rem;
-  font-weight: 500;
-  border-radius: 50px;
-  transition: all 0.3s ease;
-}
-
-.hero .cta-buttons .btn.btn-primary {
-  background-color: var(--accent-color);
-  border-color: var(--accent-color);
-  color: var(--contrast-color);
-}
-
-.hero .cta-buttons .btn.btn-primary:hover {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 15%);
-  border-color: color-mix(in srgb, var(--accent-color), transparent 15%);
-  transform: translateY(-2px);
-}
-
-.hero .cta-buttons .btn.btn-outline {
-  border: 2px solid color-mix(in srgb, var(--accent-color), transparent 70%);
-  color: var(--accent-color);
-  background: transparent;
-}
-
-.hero .cta-buttons .btn.btn-outline:hover {
-  background-color: var(--accent-color);
-  color: var(--contrast-color);
-  transform: translateY(-2px);
 }
 
 .hero .hero-stats {
@@ -1403,4 +1403,90 @@ section,
   font-style: italic;
   margin: 0 0 15px 0 0 0;
   padding: 0;
+}
+
+/*--------------------------------------------------------------
+# Case study Section
+--------------------------------------------------------------*/
+.casestudy-details .content h3 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.casestudy-details .content p {
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  margin-bottom: 15px;
+}
+
+.casestudy-details .content .features .feature-box {
+  padding: 20px;
+  background: var(--surface-color);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  height: 100%;
+  transition: 0.3s;
+}
+
+.casestudy-details .content .features .feature-box:hover {
+  transform: translateY(-5px);
+}
+
+.casestudy-details .content .features .feature-box i {
+  font-size: 24px;
+  color: var(--accent-color);
+  margin-right: 15px;
+}
+
+.casestudy-details .content .features .feature-box h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.casestudy-details .casestudy-info {
+  background: var(--surface-color);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+.casestudy-details .casestudy-info h4 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid color-mix(in srgb, var(--accent-color), transparent 85%);
+}
+
+.casestudy-details .casestudy-info .info-item {
+  margin-bottom: 25px;
+}
+
+.casestudy-details .casestudy-info .info-item:last-child {
+  margin-bottom: 0;
+}
+
+.casestudy-details .casestudy-info .info-item i {
+  font-size: 24px;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.casestudy-details .casestudy-info .info-item h5 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.casestudy-details .casestudy-info .info-item p {
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  margin: 0;
+}
+
+@media (max-width: 991px) {
+
+  .casestudy-details .casestudy-info {
+    margin-top: 30px;
+  }
 }
